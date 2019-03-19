@@ -37,6 +37,16 @@ class PayjpApiException(
     override val message: String,
     override val cause: Throwable,
     val httpStatusCode: Int,
-    val apiError: ApiError,
+    var apiError: ApiError,
     val source: String?
-) : RuntimeException(source, cause)
+) : RuntimeException(message, cause)
+// {
+//     companion object {
+//         // private val factory = PayjpTokenFactory()
+
+//         @JvmStatic
+//         fun getApiError(): ApiError {
+//             return this.apiError
+//         }
+//     }
+// }

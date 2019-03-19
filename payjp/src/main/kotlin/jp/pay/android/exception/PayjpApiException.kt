@@ -39,4 +39,4 @@ class PayjpApiException(
     val httpStatusCode: Int,
     val apiError: ApiError,
     val source: String?
-) : RuntimeException(message, cause)
+) : RuntimeException(message, cause, httpStatusCode, apiError, source)
